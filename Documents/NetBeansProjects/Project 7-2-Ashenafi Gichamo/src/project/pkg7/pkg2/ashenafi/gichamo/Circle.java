@@ -16,7 +16,23 @@ public class Circle {
    private double cf;
    private double area;
    private double radius;
+   
+   private static int objectCount;
+   
+   public Circle()
+    {
     
+    }
+
+  public void Circle(double radius)
+    {
+    this.radius=radius;
+    objectCount++;
+    }
+
+    
+
+   
     public double getCircumference()
     {
      this.calculateCircumfrance();
@@ -33,7 +49,7 @@ public class Circle {
     NumberFormat nf = NumberFormat.getInstance();
     nf.setMaximumFractionDigits(2);
     return nf.format(this.getCircumference());
-            
+   
     
     }
     
@@ -53,19 +69,24 @@ public class Circle {
       
     public String getFormattedArea()
     {
-        
-    NumberFormat format =NumberFormat.getCurrencyInstance();
+      NumberFormat formatArea =NumberFormat.getCurrencyInstance();    
+       return formatArea.format(this.getArea());
    
     }
     
-    private String formatNumber(double a)
+    /**private String formatNumber(double a)
     {
-    
-    }
+  
+        
+    }*/
     
     public static int getObjectCount()
             
     {
-    
+    return objectCount;
+    }
+
+    Circle(double radius) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

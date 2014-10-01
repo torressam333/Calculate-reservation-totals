@@ -26,15 +26,36 @@ public class Project72AshenafiGichamo {
         
         Scanner sc = new Scanner(System.in);
         
+             
         
-        while(choice.equalsIgnoreCase(""))
+        while(choice.equalsIgnoreCase("y"))
         {
-            double radius = Validator.getDouble(sc,"Enter radius");
+            double radius = Validator.getDouble(sc,"Enter radius: ");
+            
+            // create circle object
+            Circle cl = new Circle();
+            cl.Circle(radius);
+            cl.getArea();
+            cl.getCircumference();
             
             
             //Formatted Out Put
-            System.out.println("Circumference: ");
-            System.out.println("Area:          ");
+            System.out.println("Circumference: " + cl.getFormattedCircumference());
+            System.out.println("Area:          "+cl.getFormattedArea());
+            
+            
+            // Prompt the usere to continue or not 
+            
+            System.out.print("Continue? (y/n): ");
+            choice=sc.next();
+            
+            if(choice=="n")
+            {
+                int objectCount = cl.getObjectCount();
+                System.out.println("Goodbye. You created" +objectCount+ "Circle object(s)." );
+            
+            }
+            
             
    
         }

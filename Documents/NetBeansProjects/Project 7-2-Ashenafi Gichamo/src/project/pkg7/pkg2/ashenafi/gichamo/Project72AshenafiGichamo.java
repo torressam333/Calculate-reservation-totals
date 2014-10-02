@@ -19,12 +19,12 @@ public class Project72AshenafiGichamo {
     public static void main(String[] args) {
         // TODO code application logic here
         
+        // Welcome Note
         System.out.println("Welcome to the Circle Tester");
         System.out.println();
         
         String choice="y";
-        
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in); // create scanner object
                    
         while(choice.equalsIgnoreCase("y"))
         {
@@ -42,12 +42,11 @@ public class Project72AshenafiGichamo {
             System.out.println("Circumference: " + cl.getFormattedCircumference());
             System.out.println("Area:          " +cl.getFormattedArea());
             System.out.println();
-            
-            
-           
+        
             
             // Validate User Input and display Message
-             // Prompt the user to continue or not
+
+           
             boolean  isValid=false;
             while(isValid==false)
 
@@ -57,20 +56,20 @@ public class Project72AshenafiGichamo {
                 System.out.println();
               
 
-                if(choice.isEmpty() && !false)  // check to see if the entry is empty
+            if(choice.isEmpty() && !false)  // check to see if the entry is empty
                 {
 
                      System.out.println("Error! Entry is required. Try again.");
                      continue;
                 }
                 
-                else if(choice.equalsIgnoreCase("y")) 
+            else if(choice.equalsIgnoreCase("y")) 
                 {
                   isValid=true;  
                  // sc.nextLine(); 
                   continue;
                 }
-                else if (choice.equalsIgnoreCase("n"))
+            else if (choice.equalsIgnoreCase("n"))
 
                 {
                 int objectCount = cl.getObjectCount(); // assign the value that has been counted using "getObjectCount" method
@@ -79,20 +78,17 @@ public class Project72AshenafiGichamo {
                 break;
                 }
                 
-                else
+            else
                 {
                     System.out.println("Please enter  \"y\" or \"n\".");
                 }
            
              
             }
-            
-           
 
-   
         }
       
-    }
+    } //main
 
     
-}
+}//Project72AshenafiGichamo

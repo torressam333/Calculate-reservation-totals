@@ -66,6 +66,7 @@ public class Circle {
    public double getArea()
             
     {
+        // call calculateArea() method 
         this.calculateArea();
         return area;
     }

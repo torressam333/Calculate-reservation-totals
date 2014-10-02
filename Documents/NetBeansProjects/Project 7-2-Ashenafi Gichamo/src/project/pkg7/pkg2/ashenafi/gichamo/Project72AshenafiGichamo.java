@@ -25,43 +25,74 @@ public class Project72AshenafiGichamo {
         String choice="y";
         
         Scanner sc = new Scanner(System.in);
-        
-             
-        
+                   
         while(choice.equalsIgnoreCase("y"))
         {
-            double radius = Validator.getDouble(sc,"Enter radius: ");
+            double radius = Validator.getDouble(sc,"Enter radius : ");
             
-            // create circle object
-            Circle cl = new Circle();
+            
+            Circle cl = new Circle(); // create a circle  object
             cl.Circle(radius);
             cl.getArea();
             cl.getCircumference();
             
             
-            //Formatted Out Put
+            //FORMATTED RESULTS
+            
             System.out.println("Circumference: " + cl.getFormattedCircumference());
-            System.out.println("Area:          "+cl.getFormattedArea());
+            System.out.println("Area:          " +cl.getFormattedArea());
+            System.out.println();
             
             
-            // Prompt the usere to continue or not 
+           
             
-            System.out.print("Continue? (y/n): ");
-            choice=sc.next();
-            
-            if(choice=="n")
+            // Validate User Input and display Message
+             // Prompt the user to continue or not
+            boolean  isValid=false;
+            while(isValid==false)
+
             {
-                int objectCount = cl.getObjectCount();
-                System.out.println("Goodbye. You created" +objectCount+ "Circle object(s)." );
-            
+                System.out.print("Continue? (y/n):");
+                choice=sc.nextLine();
+                System.out.println();
+              
+
+                if(choice.isEmpty() && !false)  // check to see if the entry is empty
+                {
+
+                     System.out.println("Error! Entry is required. Try again.");
+                     continue;
+                }
+                
+                else if(choice.equalsIgnoreCase("y")) 
+                {
+                  isValid=true;  
+                 // sc.nextLine(); 
+                  continue;
+                }
+                else if (choice.equalsIgnoreCase("n"))
+
+                {
+                int objectCount = cl.getObjectCount(); // assign the value that has been counted using "getObjectCount" method
+                System.out.println("Goodbye. You created " +objectCount+ " Circle object(s)." ); // Display the Message
+                isValid=true;  
+                break;
+                }
+                
+                else
+                {
+                    System.out.println("Please enter  \"y\" or \"n\".");
+                }
+           
+             
             }
             
-            
+           
+
    
         }
-        
+      
     }
-    
-    
+
     
 }

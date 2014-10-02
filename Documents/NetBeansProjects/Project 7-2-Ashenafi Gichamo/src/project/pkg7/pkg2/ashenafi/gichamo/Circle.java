@@ -13,80 +13,81 @@ import java.text.NumberFormat;
  */
 public class Circle {
     
-   private double cf;
+   private double Cfrance;
    private double area;
    private double radius;
-   
    private static int objectCount;
    
+   // Circle Constractor
    public Circle()
     {
-    
+        this.Cfrance=0;
+        this.area=0;
+        this.radius=0;
+        
     }
 
-  public void Circle(double radius)
+   public void Circle(double radius)
     {
-    this.radius=radius;
-    objectCount++;
+        this.radius=radius;
+        objectCount++;
+             
     }
 
-    
-
-   
-    public double getCircumference()
+  
+   public double getCircumference()
     {
-     this.calculateCircumfrance();
-     return cf;
+        
+        this.calculateCircumfrance(); //calls calculateCircumfrance() method
+        return Cfrance;
     }
     
-    private void calculateCircumfrance()
+   private void calculateCircumfrance()
     {
-       cf =  2 * PI * radius;
+        //Cfrance = Circumfrance
+       Cfrance =  2 * PI * radius; // Calculate Circumfrance
     }
     
-    public String getFormattedCircumference()
+    // This method get formated  Circumfrance
+   public String getFormattedCircumference()
     {
-    NumberFormat nf = NumberFormat.getInstance();
-    nf.setMaximumFractionDigits(2);
-    return nf.format(this.getCircumference());
-   
-    
+       String formatCF = this.formatNumber(Cfrance); // format Circumfrance
+       return formatCF; // return Circumfrance
     }
     
   
-    
-    private void calculateArea()
-    {
+    // Calculate Area
+   private void calculateArea()
+    { 
+        //area formula
         area=  PI * radius*radius;
     }
     
-      public double getArea()
+   public double getArea()
             
     {
         this.calculateArea();
         return area;
     }
       
-    public String getFormattedArea()
+   public String getFormattedArea()
     {
-      NumberFormat formatArea =NumberFormat.getCurrencyInstance();    
-       return formatArea.format(this.getArea());
-   
+       String formatedArea=this.formatNumber(area); //format Area
+       return formatedArea; // return Area
     }
     
-    /**private String formatNumber(double a)
+   private String formatNumber(double a)
     {
-  
-        
-    }*/
+        NumberFormat setFormat = NumberFormat.getInstance();
+        setFormat.setMaximumFractionDigits(2); // set the fraction 
+        return setFormat.format(a);
+    }
     
-    public static int getObjectCount()
-            
+    // return the number of Circle object.
+    public static int getObjectCount() 
     {
-    return objectCount;
+        return objectCount;
     }
 
-    Circle(double radius) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 }

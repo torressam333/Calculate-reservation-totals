@@ -23,16 +23,17 @@ public class Validator {
         {
             System.out.print(prompt);
             if(sc.hasNextDouble())
-            {
-                i=sc.nextDouble();
-                isValid = true;
-                
-            }
+                {
+                    i=sc.nextDouble();
+                    isValid = true;
+
+                }
+
             else
-            {
-                System.out.println("Error! Invalid integer value.Try again.");
-            }
-            sc.nextLine();
+                {
+                    System.out.println("Error! Invalid integer value.Try again.");
+                }
+                sc.nextLine(); 
         }
         return (int) i;
     }

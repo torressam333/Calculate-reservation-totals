@@ -60,6 +60,7 @@ public class Project72AshenafiGichamo {
                 {
 
                      System.out.println("Error! Entry is required. Try again.");
+                     System.out.println();
                      continue;
                 }
                 
@@ -81,6 +82,7 @@ public class Project72AshenafiGichamo {
             else
                 {
                     System.out.println("Please enter  \"y\" or \"n\".");
+                    System.out.println();
                 }
            
              

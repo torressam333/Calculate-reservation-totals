@@ -23,72 +23,9 @@ public class Project72AshenafiGichamo {
         System.out.println("Welcome to the Circle Tester");
         System.out.println();
         
-        String choice="y";
-        Scanner sc = new Scanner(System.in); // create scanner object
-                   
-        while(choice.equalsIgnoreCase("y"))
-        {
-            double radius = Validator.getDouble(sc,"Enter radius : ");
-            
-            
-            Circle cl = new Circle(); // create a circle  object
-            cl.Circle(radius);
-            cl.getArea();
-            cl.getCircumference();
-            
-            
-            //FORMATTED RESULTS
-            
-            System.out.println("Circumference: " + cl.getFormattedCircumference());
-            System.out.println("Area:          " +cl.getFormattedArea());
-            System.out.println();
-        
-            
-            // Validate User Input and display Message
-
-           
-            boolean  isValid=false;
-            while(isValid==false)
-
-            {
-                System.out.print("Continue? (y/n):");
-                choice=sc.nextLine();
-                System.out.println();
-              
-
-            if(choice.isEmpty() && !false)  // check to see if the entry is empty
-                {
-
-                     System.out.println("Error! Entry is required. Try again.");
-                     System.out.println();
-                     continue;
-                }
-                
-            else if(choice.equalsIgnoreCase("y")) 
-                {
-                  isValid=true;  
-                 // sc.nextLine(); 
-                  continue;
-                }
-            else if (choice.equalsIgnoreCase("n"))
-
-                {
-                int objectCount = cl.getObjectCount(); // assign the value that has been counted using "getObjectCount" method
-                System.out.println("Goodbye. You created " +objectCount+ " Circle object(s)." ); // Display the Message
-                isValid=true;  
-                break;
-                }
-                
-            else
-                {
-                    System.out.println("Please enter  \"y\" or \"n\".");
-                    System.out.println();
-                }
-           
-             
-            }
-
-        }
+        // create CircleApp object to access  CircleApp method
+        CircleApp ca = new CircleApp();
+        ca.getUserInPut();
       
     } //main
 

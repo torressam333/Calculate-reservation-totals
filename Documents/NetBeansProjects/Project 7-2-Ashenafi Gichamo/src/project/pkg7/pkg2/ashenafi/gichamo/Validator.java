@@ -21,6 +21,7 @@ public class Validator {
         
         while(isValid==false)
         {
+            
             System.out.print(prompt);
             if(sc.hasNextDouble())
                 {
@@ -28,8 +29,8 @@ public class Validator {
                     isValid = true;
 
                 }
-
-            else
+            
+              else 
                 {
                     System.out.println("Error! Invalid integer value.Try again.");
                 }

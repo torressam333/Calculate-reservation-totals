@@ -17,7 +17,7 @@ public class CircleApp {
     {
           String choice="y";
         Scanner sc = new Scanner(System.in); // create scanner object
-                   
+                    
         while(choice.equalsIgnoreCase("y"))
         {
             double radius = Validator.getDouble(sc,"Enter radius : ");

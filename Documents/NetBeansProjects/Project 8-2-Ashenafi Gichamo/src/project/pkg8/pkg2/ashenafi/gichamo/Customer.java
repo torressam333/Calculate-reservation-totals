@@ -9,6 +9,30 @@ package project.pkg8.pkg2.ashenafi.gichamo;
  *
  * @author agichamo
  */
-public class Customer {
+public class Customer extends Person{
     
+    private String cNumber; //cNumber= Customer Number
+    
+    public Customer()
+    {
+      
+    }
+    // get Customer Number
+    public void setNumber(String CNumber)
+    {
+        this.cNumber = CNumber;
+    }
+    //get customr number
+    
+    public String getNumber()
+    {
+        return cNumber;
+    }
+    
+    @Override
+    public String getDisplayText()
+    {
+        // Should be getDisplayText()
+        return super.toString() +"Customer Number: " + cNumber+"\n";
+    }
 }

@@ -11,7 +11,8 @@ package project.pkg8.pkg2.ashenafi.gichamo;
  */
 public class Person 
 {
-    private String name;
+    private String firstName;
+    private String lastName;
     private String email;
     
     
@@ -21,14 +22,24 @@ public class Person
     
     }
     
-    public void setName(String name)
+    public void setfirstName(String fname)
     {
-        this.name= name;
+        this.firstName=fname;
     }
     
-    public String getName()
+    public String getfirstName()
     {
-        return name;
+        return firstName;
+    }
+    
+    public void setlastName(String lname)
+    {
+        this.firstName=lname;
+    }
+    
+    public String getlastName()
+    {
+        return lastName;
     }
     
     public void setEmail(String email)
@@ -42,16 +53,17 @@ public class Person
         
     }
     
+    
     @Override
     public String toString()
     {
-        return "Name:   "+name+ "\n" +
-                "E-Mail:"+email+ "\n" + "\n";
+        return "Name:   "+firstName+" "+lastName+ "\n"+"E-Mail:"+email+ "\n";
     }
     
     //returns a string
+    
     public String getDisplayText()
     {
-        
+        return toString();
     }
 }

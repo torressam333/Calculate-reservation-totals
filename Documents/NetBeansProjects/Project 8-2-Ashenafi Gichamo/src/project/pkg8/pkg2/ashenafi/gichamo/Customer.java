@@ -28,11 +28,17 @@ public class Customer extends Person{
     {
         return cNumber;
     }
-    
     @Override
+    public String toString()
+    {
+        return super.toString() +"Customer Number: " + cNumber+"\n";
+    }
+    
+   @Override
     public String getDisplayText()
     {
         // Should be getDisplayText()
+        //return toString();
         return super.toString() +"Customer Number: " + cNumber+"\n";
     }
 }

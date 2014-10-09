@@ -11,4 +11,30 @@ package project.pkg8.pkg2.ashenafi.gichamo;
  */
 public class Validator {
     
+    public static String userInput(String input)
+            
+    {
+        String i= "";
+        boolean isValid = false;
+        
+      //  while(isValid==false)
+       // {
+           
+            if(!input.isEmpty())
+                {
+                    i=input;
+                    isValid = true;
+
+                }
+            
+              else 
+                {
+                    System.out.println("Please Enter Again!");
+                    
+                }
+            
+      //  }
+        return  i;
+    }
+    
 }

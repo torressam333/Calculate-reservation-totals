@@ -19,7 +19,7 @@ public class PersonApp   {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        System.out.println("Welcome to the Person Tester application");
+        System.out.print("Welcome to the Person Tester application");
         System.out.println();
         
         Scanner sc = new Scanner(System.in);
@@ -28,11 +28,11 @@ public class PersonApp   {
         
         String choice ="y";
        
-      //  do{
+    
             
      while(choice.equalsIgnoreCase("y"))  
      {
-        System.out.println("Create customer or employee? (c/e): ");
+        System.out.print("Create customer or employee? (c/e): ");
         String CE =sc.next();
         if(CE.equalsIgnoreCase("c"))
         {
@@ -41,12 +41,13 @@ public class PersonApp   {
             System.out.print("Enter first name: ");
             String fName = sc.next();
             
+            Validator v = new Validator();
+            v.userInput(fName);
             c.setfirstName(fName);
             
             //get Customer First Name
 
-            
-            
+                      
 
             // Prompt the user to enter LAST NAME 
             System.out.print("Enter last name: ");

@@ -14,7 +14,9 @@ public class Employee extends Person {
     
     public Employee()
     {
-        
+     
+        this.ssn="";
+     
     }
     public void setSSN(String setSSN)
     {
@@ -27,11 +29,11 @@ public class Employee extends Person {
     @Override
     public String toString()
     {
-           return super.toString()+"\n"+"Social security number: "+ssn; 
+           return "Social security number: "+ssn+"\n"; 
     }
     @Override
-    public String getDisplayText ()
+    public String getDisplayText()
     {
-      return toString();
+      return super.toString()+"Social security number: "+ssn+"\n";
     }
 }

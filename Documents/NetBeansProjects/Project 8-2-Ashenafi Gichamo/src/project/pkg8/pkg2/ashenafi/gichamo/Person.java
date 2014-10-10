@@ -9,18 +9,24 @@ package project.pkg8.pkg2.ashenafi.gichamo;
  *
  * @author agichamo
  */
-public class Person 
+
+//abstract Person class
+public abstract class Person 
 {
+    // person class private attributes
     private String firstName;
     private String lastName;
     private String email;
-    
+        
     
     // Person Constractor with no-argument 
     public Person()
     {
-    
+        this.firstName="";
+        this.lastName="";
+        this.email="";
     }
+
     
     public void setfirstName(String fname)
     {
@@ -34,7 +40,7 @@ public class Person
     
     public void setlastName(String lname)
     {
-        this.firstName=lname;
+        this.lastName=lname;
     }
     
     public String getlastName()
@@ -57,13 +63,11 @@ public class Person
     @Override
     public String toString()
     {
-        return "Name:   "+firstName+" "+lastName+ "\n"+"E-Mail:"+email+ "\n";
+        return "Name:"+firstName+" "+lastName+ "\n"+
+               "E-Mail:"+email+ "\n";
     }
     
-    //returns a string
+      //abstract method    
+    abstract String getDisplayText();
     
-    public String getDisplayText()
-    {
-        return toString();
-    }
 }

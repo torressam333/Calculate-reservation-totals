@@ -13,14 +13,19 @@ public class Customer extends Person{
     
     private String cNumber; //cNumber= Customer Number
     
+    // Custmer class constractor
+   
     public Customer()
     {
-      
+   
+        this.cNumber="";
+   
     }
+    
     // get Customer Number
-    public void setNumber(String CNumber)
+    public void setNumber(String setNumber)
     {
-        this.cNumber = CNumber;
+        this.cNumber = setNumber;
     }
     //get customr number
     
@@ -31,11 +36,11 @@ public class Customer extends Person{
     @Override
     public String toString()
     {
-        return super.toString() +"Customer Number: " + cNumber+"\n";
+        return "Customer Number: " + cNumber+"\n";
     }
     
    @Override
-    public String getDisplayText()
+    public String getDisplayText()// implement the abstract method
     {
         // Should be getDisplayText()
         //return toString();

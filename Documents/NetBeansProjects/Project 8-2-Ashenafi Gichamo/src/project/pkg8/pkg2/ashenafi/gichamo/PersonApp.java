@@ -32,12 +32,14 @@ public class PersonApp   {
             
      while(choice.equalsIgnoreCase("y"))  
      {
+         System.out.println("");
         System.out.print("Create customer or employee? (c/e): ");
         String CE =sc.next();
         if(CE.equalsIgnoreCase("c"))
         {
             Customer c =  new Customer(); 
             //Prompt the user to enter FIRST NAME
+            System.out.println("");
             System.out.print("Enter first name: ");
             String fName = sc.next();
             
@@ -64,7 +66,7 @@ public class PersonApp   {
             System.out.print("Customer number: ");
             String cN = sc.next();
             c.setNumber(cN);
-            System.out.println("You entered:"+"\n" + c.getDisplayText());
+            System.out.println("You entered:"+"\n"+ c.getDisplayText());
         
         
         
@@ -73,6 +75,7 @@ public class PersonApp   {
         else if(CE.equalsIgnoreCase("e"))
         {
             Employee e = new Employee();
+            System.out.println("");
             System.out.print("Enter first name: ");
             String fName = sc.next();
             sc.nextLine();
@@ -91,7 +94,7 @@ public class PersonApp   {
             System.out.print("Social security number: ");
             String SSNumber = sc.next();
             e.setSSN(SSNumber);
-            System.out.println("You entered:"+"\n" + e.toString());
+            System.out.println("You entered: "+"\n"+"\n" + e.getDisplayText());
             // Prompt the Customer to enter Customer Number
            
             

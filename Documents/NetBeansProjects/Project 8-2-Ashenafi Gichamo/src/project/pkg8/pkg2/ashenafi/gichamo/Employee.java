@@ -12,16 +12,20 @@ package project.pkg8.pkg2.ashenafi.gichamo;
 public class Employee extends Person {
     private String ssn;
     
+    //employee constractor
     public Employee()
     {
      
         this.ssn="";
      
     }
+    //set SSN
     public void setSSN(String setSSN)
     {
         this.ssn=setSSN;
     }
+    
+    // get SSN
     public String getSSN()
     {
         return ssn;
@@ -34,6 +38,6 @@ public class Employee extends Person {
     @Override
     public String getDisplayText()
     {
-      return super.toString()+"Social security number: "+ssn+"\n";
+      return super.toString()+"Social security number: "+ssn+"\n"; // return super class toString Value and SSN
     }
 }

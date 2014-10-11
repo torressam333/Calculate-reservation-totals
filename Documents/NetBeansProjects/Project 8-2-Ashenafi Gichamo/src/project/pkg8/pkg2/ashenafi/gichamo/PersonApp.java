@@ -6,6 +6,7 @@
 package project.pkg8.pkg2.ashenafi.gichamo;
 
 import java.util.Scanner;
+import java.util.regex.*;
 
 /**
  *
@@ -17,99 +18,90 @@ public class PersonApp   {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+      
         
-        System.out.print("Welcome to the Person Tester application");
-        System.out.println();
+        System.out.print("Welcome to the Person Tester application"+"\n");
+        System.out.println("");
         
-        Scanner sc = new Scanner(System.in);
-        Employee emp = new Employee();
-        Customer cust = new Customer();
-        
-        String choice ="y";
+        Scanner sc = new Scanner(System.in); // Scanner Object instantiation 
+        String choice ="";
+        String CM = "";
        
     
             
-     while(choice.equalsIgnoreCase("y"))  
+     do
      {
-         System.out.println("");
-        System.out.print("Create customer or employee? (c/e): ");
-        String CE =sc.next();
-        if(CE.equalsIgnoreCase("c"))
+        
+        CM = Validator.getCorE(sc,"Create customer or employee? (c/e):"); // calls getCorE method from Validator class
+      
+        if(CM.equalsIgnoreCase("c"))
         {
-            Customer c =  new Customer(); 
+            Customer c =  new Customer();  // Customer class object
             //Prompt the user to enter FIRST NAME
-            System.out.println("");
+            System.out.println("");// New line
             System.out.print("Enter first name: ");
             String fName = sc.next();
-            
-            Validator v = new Validator();
-            v.userInput(fName);
             c.setfirstName(fName);
             
-            //get Customer First Name
-
-                      
-
-            // Prompt the user to enter LAST NAME 
+            // Prompt the user to enter his/her Last Name
             System.out.print("Enter last name: ");
             String lName = sc.next();
             c.setlastName(lName);
             
             
             // Prompt the USER to enter Email Address
-            System.out.print("Enter email address: ");
-            String email = sc.next();
-            c.setEmail(email);
+             String email=Validator.getEmail(sc,"Enter email address: ");
+             c.setEmail(email);
             
             // Prompt the Customer to enter Customer Number
             System.out.print("Customer number: ");
             String cN = sc.next();
+            System.out.println("");
             c.setNumber(cN);
+            // Display the User Data
             System.out.println("You entered:"+"\n"+ c.getDisplayText());
         
         
         
         
         }
-        else if(CE.equalsIgnoreCase("e"))
+        else if(CM.equalsIgnoreCase("e"))
         {
-            Employee e = new Employee();
+            Employee e = new Employee(); // employee object 
             System.out.println("");
+            // Prompt the user to enter first Name
             System.out.print("Enter first name: ");
-            String fName = sc.next();
+            String fName = sc.next(); // asign the data to fName variable
             sc.nextLine();
             e.setfirstName(fName);
-            
+            // Prompt the user to enter Lase  Name
             System.out.print("Enter last name: ");
             String lName = sc.next();
             e.setlastName(lName);
 
             // Prompt the USER to enter Email Address
-            System.out.print("Enter email address: ");
-            String email = sc.next();
+            
+            String email = Validator.getEmail(sc, "Enter email address: ");
             e.setEmail(email);
             
             
-            System.out.print("Social security number: ");
-            String SSNumber = sc.next();
+            System.out.print("");
+            String SSNumber = Validator.validateSSN(sc,"Social security number:");
             e.setSSN(SSNumber);
-            System.out.println("You entered: "+"\n"+"\n" + e.getDisplayText());
+            System.out.println("");
             // Prompt the Customer to enter Customer Number
-           
+           System.out.println("You entered: "+"\n" + e.getDisplayText());
             
            
         }
       
-        
-      
-        System.out.print("Continue? (y/n): ");
-        choice= sc.next();
-                 }
+        choice= Validator.getYesorNO(sc,"Continue? (y/n): "); // prompts the user to continue or not.
+       }while(choice.equalsIgnoreCase("y"));
          
       
           
         
     }
+    
     
 }

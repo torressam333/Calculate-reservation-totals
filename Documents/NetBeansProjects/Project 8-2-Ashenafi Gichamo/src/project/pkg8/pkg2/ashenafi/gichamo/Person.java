@@ -13,7 +13,7 @@ package project.pkg8.pkg2.ashenafi.gichamo;
 //abstract Person class
 public abstract class Person 
 {
-    // person class private attributes
+    // private Variables 
     private String firstName;
     private String lastName;
     private String email;
@@ -27,32 +27,35 @@ public abstract class Person
         this.email="";
     }
 
-    
+    // set first Name
     public void setfirstName(String fname)
     {
         this.firstName=fname;
     }
-    
+    // return first Name
     public String getfirstName()
     {
         return firstName;
     }
     
+    // set Last name
     public void setlastName(String lname)
     {
         this.lastName=lname;
     }
     
+    //return Last Name
     public String getlastName()
     {
         return lastName;
     }
-    
+    // set Email
     public void setEmail(String email)
     {
         this.email=email;
     }
     
+    // return email
     public String getEmail()
     {
         return email;
@@ -68,6 +71,6 @@ public abstract class Person
     }
     
       //abstract method    
-    abstract String getDisplayText();
+    abstract String getDisplayText(); // Abstract Method   
     
 }

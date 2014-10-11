@@ -9,6 +9,7 @@ package project.pkg8.pkg2.ashenafi.gichamo;
  *
  * @author agichamo
  */
+// customer is a sub class of Person class
 public class Customer extends Person{
     
     private String cNumber; //cNumber= Customer Number
@@ -25,25 +26,24 @@ public class Customer extends Person{
     // get Customer Number
     public void setNumber(String setNumber)
     {
-        this.cNumber = setNumber;
+        this.cNumber = setNumber; // set customer number
     }
-    //get customr number
-    
+   
     public String getNumber()
     {
-        return cNumber;
+        return cNumber; // return customer number
     }
     @Override
     public String toString()
     {
+        // return customer number
         return "Customer Number: " + cNumber+"\n";
     }
     
    @Override
     public String getDisplayText()// implement the abstract method
     {
-        // Should be getDisplayText()
-        //return toString();
+        //return customer number and  super class toString 
         return super.toString() +"Customer Number: " + cNumber+"\n";
     }
 }

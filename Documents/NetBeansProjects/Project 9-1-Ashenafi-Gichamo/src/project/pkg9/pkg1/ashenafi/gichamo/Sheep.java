@@ -31,22 +31,25 @@ public class Sheep implements Countable ,Cloneable {
     
     @Override
     public void incrementCount() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        countSheep=countSheep+1;
+
     }
 
     @Override
-    public void resetCount() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void resetCount() 
+    {
+        countSheep=0;
     }
 
     @Override
     public int getCount() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return countSheep;
     }
 
     @Override
     public String getCountString() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        return countSheep+"Blackie";
     }
     
 }

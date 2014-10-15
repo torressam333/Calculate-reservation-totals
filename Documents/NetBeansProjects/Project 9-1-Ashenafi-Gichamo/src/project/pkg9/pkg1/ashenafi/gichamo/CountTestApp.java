@@ -7,10 +7,21 @@ package project.pkg9.pkg1.ashenafi.gichamo;
 
 /**
  *
- * @author agichamo
+ * @author Host
  */
-public class CountTestApp extends CountUtil  {
+public class CountTestApp {
     
-    CountUtil c = new CountUtil();
+    public static void main(String args[])
+    {
+        System.out.print("Counting alligators...");
+        Alligator a = new Alligator();
+        CountUtil c = new CountUtil();
+        c.count(c,3);
+        
+        System.out.print("Counting sheep...");
+        
+        
+        
+    }
     
 }

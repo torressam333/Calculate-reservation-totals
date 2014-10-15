@@ -9,13 +9,17 @@ package project.pkg9.pkg1.ashenafi.gichamo;
  *
  * @author agichamo
  */
-public class CountUtil {
+public class CountUtil extends Alligator {
     
     public static void count(Countable c, int maxCount)
     {
+        
+        
         c.incrementCount();
-        c.resetCount();
         c.getCount();
+        
+        c.resetCount();
+        
         
     }
     

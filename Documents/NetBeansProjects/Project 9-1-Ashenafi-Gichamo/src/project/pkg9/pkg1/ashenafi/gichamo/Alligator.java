@@ -15,31 +15,32 @@ public class Alligator implements Countable  {
 
     @Override
     public void incrementCount() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        
+     
+        count=count+1;
         
     }
 
     @Override
     public void resetCount() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        count =0;
     }
 
     @Override
     public int getCount() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+      return count;
+        }
 
     @Override
     public String getCountString() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return count+"Alligator";
     }
     
-    public  String formattedCount()
+    /*public  String formattedCount()
     {
         
        
         
-    }
+    }*/
     
 }

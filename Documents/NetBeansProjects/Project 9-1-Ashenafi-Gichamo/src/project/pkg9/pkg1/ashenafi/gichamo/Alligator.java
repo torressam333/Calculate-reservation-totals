@@ -23,7 +23,7 @@ public class Alligator implements Countable  {
     @Override
     public void resetCount() {
         
-        count =0;
+       count =0;
     }
 
     @Override
@@ -33,7 +33,7 @@ public class Alligator implements Countable  {
 
     @Override
     public String getCountString() {
-        return count+"Alligator";
+        return count+" "+"Alligator";
     }
     
     /*public  String formattedCount()

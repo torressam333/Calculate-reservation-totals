@@ -5,6 +5,9 @@
  */
 package project.pkg9.pkg1.ashenafi.gichamo;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author agichamo
@@ -12,11 +15,11 @@ package project.pkg9.pkg1.ashenafi.gichamo;
 public class Sheep implements Countable ,Cloneable {
     
     private int countSheep=0;
-    private String sheepName="";
+    private String sheepName;
     
-    public void setSheepName()
+    public void setSheepName(String sheep)
     {
-        this.sheepName =sheepName;
+        sheepName =sheep;
     }
     public String getsheeNames()
     {
@@ -26,7 +29,9 @@ public class Sheep implements Countable ,Cloneable {
     @Override
     public Object clone() throws CloneNotSupportedException
     {
-        return super.clone();
+  
+            return super.clone();
+       
     }
     
     @Override
@@ -49,7 +54,8 @@ public class Sheep implements Countable ,Cloneable {
     @Override
     public String getCountString() {
         
-        return countSheep+"Blackie";
+        return getCount()+" "+getsheeNames();
+        
     }
     
 }

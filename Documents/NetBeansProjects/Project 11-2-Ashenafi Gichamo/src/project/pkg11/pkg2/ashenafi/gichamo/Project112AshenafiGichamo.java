@@ -25,6 +25,26 @@ public class Project112AshenafiGichamo {
         System.out.println("Enter number of students to enter: ");
         int numberofStudent = sc.nextInt();
         
+       // Student s = new Student();
+        
+        Student [] stud = new Student[numberofStudent];
+        int i=0;
+        for(Student s : stud )
+        {
+            System.out.println("Student "+"i"+ "last name: ");
+            stud[i]=sc.next();
+            s.setlName(stud[1]);
+            i++;
+            System.out.println("Student "+"i"+ "First name: ");
+            stud[i]= sc.next();
+            s.setfName(stud[i]);
+            
+            System.out.println("Student "+"i"+ "last name: ");
+            stud[i]= sc.next();
+            s.setScore(stud[i]);
+             i++;
+        }
+        
         
     }
     

@@ -9,7 +9,7 @@ package project.pkg11.pkg2.ashenafi.gichamo;
  *
  * @author agichamo
  */
-public class Student implements Comparable {
+public class Student implements Comparable  {
     
     private String fName="";
     private String lName="";

@@ -14,44 +14,61 @@ public class Student implements Comparable  {
     private String fName="";
     private String lName="";
     private int score=0;
+
+    public Student(String fn, String ln, int s)
     
+    {
+        this.fName=fn;
+        this.lName=ln;
+        this.score=s;
+    }
+
+    Student() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
 
     @Override
     public int compareTo(Object t)
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        Student s =(Student) t;
+        
+        int result =this.fName.compareTo(s.fName);
         
         
+        if (result>10 )
+            return -1;
+        if (result<0)
+            return 1;
+        return 0;
     }
     
-    public void setfName(String fn)
-    {
-        this.fName=fn;
-    }
+   
     
     public String getfName()
     {
       return fName;  
     }
     
-    public void setlName(String ln)
-    {
-        this.lName=ln;
-    }
+   
     
     public String getlName()
     {
         return lName;
     }
     
-    public void setScore(int s)
-    {
-        this.score=s;
-    }
+   
     
     public int getScore()
     {
         return score;
+    }
+    
+    public String  toString()
+    {
+        return getlName()+getfName()+getScore();
     }
     
     

@@ -5,6 +5,7 @@
  */
 package project.pkg11.pkg2.ashenafi.gichamo;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -20,34 +21,49 @@ public class Project112AshenafiGichamo {
     
     {
         // TODO code application logic here
-        System.out.println("Welcome to the Student Scores Application.");
+        System.out.println("Welcome to the Student Scores Application."+"\n");
         Scanner sc = new Scanner(System.in);  
-        System.out.println("Enter number of students to enter: ");
+        System.out.print("Enter number of students to enter: ");
+      
         int numberofStudent = sc.nextInt();
-        
-       Student s = new Student();
+       //Student sud = new Student();
+       Student[] s = new Student[numberofStudent];
+       
        Validate v= new Validate();
-        
-        String  [] fName = new String[numberofStudent];
-        String  [] lname = new String [numberofStudent];
-        int     [] score = new int[numberofStudent];
+        //String [] [] name = new String [numberofStudent][2];
+      //  String  [] fName = new String[numberofStudent];
+       // String  [] lname = new String [numberofStudent];
+      //  int     [] score = new int[numberofStudent];
         
        
-        for( int i=0;i<=numberofStudent;i++)
+        for( int i=1;i<=numberofStudent;i++)
         {
-            String fn = v.vName(sc,"Student "+"i"+ "First name:");
-            fName[i]=sc.next();
-            s.setlName(fName[i]);
+            int y=0;
+            System.out.println("");
+            String StudentFirstName = v.vName(sc,"Student "+i+ " First name:");
+           
+            String studentLastName =v.vName(sc,"Student "+i+ " Last  name: ");
+      
+            int studentScore= v.vScore(sc,"Student "+i+ " score : ");
+          
             
-            System.out.println("Student "+"i"+ "First name: ");
-            lname[i]= sc.next();
-            s.setfName(lname[i]);
             
-            System.out.println("Student "+"i"+ "last name: ");
-            lname[i]= sc.next();
-            s.setScore(score[i]);
-             i++;
+            s[y] = new Student(StudentFirstName, studentLastName , studentScore);
+            
+             y++;
+             System.out.println(y);
+            
+             
+             
         }
+   
+        //System.out.println(s[]);
+        
+        Arrays.sort(s);
+        for(Student i: s)
+        
+        //    System.out.println(i.getlName()+","+i.getfName()+":"+i.getScore());
+        
         
         
     }

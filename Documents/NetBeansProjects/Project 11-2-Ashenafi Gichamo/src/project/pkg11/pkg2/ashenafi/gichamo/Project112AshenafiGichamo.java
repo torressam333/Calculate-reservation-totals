@@ -29,43 +29,44 @@ public class Project112AshenafiGichamo {
        //Student sud = new Student();
        Student[] s = new Student[numberofStudent];
        
-       Validate v= new Validate();
+       Validator v= new Validator();
         //String [] [] name = new String [numberofStudent][2];
       //  String  [] fName = new String[numberofStudent];
        // String  [] lname = new String [numberofStudent];
       //  int     [] score = new int[numberofStudent];
         
-       
+        int y=0;
         for( int i=1;i<=numberofStudent;i++)
         {
-            int y=0;
+            
             System.out.println("");
-            String StudentFirstName = v.vName(sc,"Student "+i+ " First name:");
-           
-            String studentLastName =v.vName(sc,"Student "+i+ " Last  name: ");
-      
+            String StudentFirstName = v.fName(sc,"Student "+i+ " First name:");
+            
+            String studentLastName = v.fName(sc,"Student "+i+ " Last  name: ");
             int studentScore= v.vScore(sc,"Student "+i+ " score : ");
           
             
-            
+            // Store student information in the array
             s[y] = new Student(StudentFirstName, studentLastName , studentScore);
             
-             y++;
-             System.out.println(y);
+            // increament the array type 
+            y=y+1;
+    
             
              
              
         }
-   
-        //System.out.println(s[]);
         
-        Arrays.sort(s);
+   
+        System.out.println(""); // New line
+        
+        Arrays.sort(s,0,numberofStudent);
         for(Student i: s)
         
-        //    System.out.println(i.getlName()+","+i.getfName()+":"+i.getScore());
+          System.out.println(i.getlName()+", "+i.getfName()+": "+i.getScore());
         
         
-        
-    }
+      }   
+   
     
 }

@@ -23,53 +23,37 @@ public class Student implements Comparable  {
         this.score=s;
     }
 
-    Student() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-   
-
+  
     @Override
     public int compareTo(Object t)
     {
-        
         Student s =(Student) t;
-        
-        int result =this.fName.compareTo(s.fName);
-        
-        
-        if (result>10 )
-            return -1;
-        if (result<0)
-            return 1;
-        return 0;
+   
+        // compares the array 
+        if(lName.equals(s.lName))
+        {
+            return fName.compareToIgnoreCase(s.fName);
+        }
+        return lName.compareToIgnoreCase(s.lName);
+ 
     }
     
-   
-    
+   // returns First Name  
     public String getfName()
     {
       return fName;  
     }
-    
-   
-    
+
+    // Returns Last Name
     public String getlName()
     {
         return lName;
     }
-    
-   
-    
+
+    // Returns Student Score
     public int getScore()
     {
         return score;
     }
-    
-    public String  toString()
-    {
-        return getlName()+getfName()+getScore();
-    }
-    
-    
+
 }

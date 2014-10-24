@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author agichamo
  */
-public class Validate {
+public class Validator {
     
     public static int vScore(Scanner sc, String prompt)
     {
@@ -36,33 +36,40 @@ public class Validate {
         
     }
     
-    public static String vName(Scanner sc, String prompt)
+    public static String fName(Scanner sc, String prompt)
     {
         
-        String name ="";
+        String fname = null;
         boolean isvalid=false;
-        
+       
         while (isvalid==false)
         {
-            
+          
             System.out.print(prompt);
-            name=sc.next().trim();
-            
-            if (!(name.length() == 0))
+            fname= sc.next();
+      
+            if (!(fname.equals("")))
             {
+              
                  isvalid=true;
             }
+       
+      
             else 
             {
+                  System.out.println("First Name can't be empty! Please Enter your Name.");
                
-                System.out.print("Please enter Your Name");
                     
              }
+         //   sc.nextLine();
+           
             
         }
-        return name;
+        return fname;
         
     }
+    
+
             
     
 }

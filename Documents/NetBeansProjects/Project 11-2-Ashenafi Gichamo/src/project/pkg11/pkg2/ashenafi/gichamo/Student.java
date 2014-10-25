@@ -14,7 +14,8 @@ public class Student implements Comparable  {
     private String fName="";
     private String lName="";
     private int score=0;
-
+    
+    // Student Class constructor
     public Student(String fn, String ln, int s)
     
     {
@@ -29,7 +30,7 @@ public class Student implements Comparable  {
     {
         Student s =(Student) t;
    
-        // compares the array 
+        // compares the array  and return the result
         if(lName.equals(s.lName))
         {
             return fName.compareToIgnoreCase(s.fName);
@@ -39,7 +40,7 @@ public class Student implements Comparable  {
     }
     
   
-   // returns First Name  
+   // returns first Name  
     public String getfName()
     {
       return fName;  

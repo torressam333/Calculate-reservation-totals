@@ -56,10 +56,11 @@ public class Validator {
 
             if (StudentName == null || StudentName.equals(""))// check if the the user input is blank
             {
-                System.out.println("First Name can't be empty! Please Enter your Name.");
+                System.out.println("Name can't be empty! Please Enter your Name.");
             }
-            
+           
             else 
+              
             {
                isvalid=true;
              

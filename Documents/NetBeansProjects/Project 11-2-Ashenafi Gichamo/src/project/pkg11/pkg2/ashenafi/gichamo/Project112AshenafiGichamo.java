@@ -27,23 +27,19 @@ public class Project112AshenafiGichamo {
       
         int numberofStudent = sc.nextInt();
        //Student sud = new Student();
-       Student[] s = new Student[numberofStudent];
+       Student[] s = new Student[numberofStudent]; //An array to store Student Infor
        
-       Validator v= new Validator();
-        //String [] [] name = new String [numberofStudent][2];
-      //  String  [] fName = new String[numberofStudent];
-       // String  [] lname = new String [numberofStudent];
-      //  int     [] score = new int[numberofStudent];
+   
         
         int y=0;
         for( int i=1;i<=numberofStudent;i++)
         {
             
             System.out.println("");
-            String StudentFirstName = v.fName(sc,"Student "+i+ " First name:");
-            
-            String studentLastName = v.fName(sc,"Student "+i+ " Last  name: ");
-            int studentScore= v.vScore(sc,"Student "+i+ " score : ");
+            String StudentFirstName = Validator.fName(sc , "Student "+i+ " First name:");
+           
+            String studentLastName = Validator.fName(sc , "Student "+i+ " Last  name: ");
+            int studentScore= Validator.vScore(sc,"Student "+i+ " score : ");
           
             
             // Store student information in the array
@@ -51,10 +47,7 @@ public class Project112AshenafiGichamo {
             
             // increament the array type 
             y=y+1;
-    
-            
-             
-             
+   
         }
         
    

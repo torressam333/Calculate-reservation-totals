@@ -13,6 +13,8 @@ import java.util.Scanner;
  */
 public class Validator {
     
+    //******* Validate User Score  entry ******//
+    
     public static int vScore(Scanner sc, String prompt)
     {
         int sScore =0;
@@ -22,7 +24,7 @@ public class Validator {
         {
             System.out.print(prompt);
             sScore=sc.nextInt();
-            if (sScore>100||sScore<0)
+            if (sScore>100||sScore<0) // checks to see if the user enter  a
             {
                 System.out.println("Please Enter a score that is between 0 to 100");
             }
@@ -36,36 +38,35 @@ public class Validator {
         
     }
     
+    //**** Validat the user first Name and last Name****//
+    
     public static String fName(Scanner sc, String prompt)
     {
-        
-        String fname = null;
+        Scanner input =new Scanner(System.in);
+        String  StudentName="";
         boolean isvalid=false;
        
+
         while (isvalid==false)
         {
           
             System.out.print(prompt);
-            fname= sc.next();
-      
-            if (!(fname.equals("")))
+
+            StudentName = input.nextLine();//search through the input looking for a line separator
+
+            if (StudentName == null || StudentName.equals(""))// check if the the user input is blank
             {
-              
-                 isvalid=true;
+                System.out.println("First Name can't be empty! Please Enter your Name.");
             }
-       
-      
+            
             else 
             {
-                  System.out.println("First Name can't be empty! Please Enter your Name.");
-               
-                    
-             }
-         //   sc.nextLine();
-           
-            
+               isvalid=true;
+             
+            }
+         
         }
-        return fname;
+        return StudentName; //return studnet  Name
         
     }
     

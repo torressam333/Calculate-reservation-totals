@@ -14,40 +14,59 @@ import java.util.GregorianCalendar;
  */
 public class Reservation {
     
-    private String arrivalDate="";
-    private String departureDate="";
+    private long arrivalDate;
+    private long departureDate;
+    private long elapsedDays;
+    private long TotalPrice;
     public static final double nightlyRate = 115.00;
     
     
-    private Reservation()
+    public Reservation()
     {
         
     }
-    private void setArrivalDate(String arrive)
+    public  Date setArrivalDate(int yy,int mm, int dd)
     {
-        this.arrivalDate=arrive;
+      GregorianCalendar aDate = new GregorianCalendar (yy,mm,dd) ;
+       Date arrival = aDate.getTime();
+        arrivalDate =arrival.getTime();
+      return aDate.getTime();
     }
-    private String getArrivalDate()
+       
+     public  Date setDeparture(int yy,int mm, int dd)
     {
-        return arrivalDate;
+         GregorianCalendar dDate = new GregorianCalendar (yy,mm,dd) ;
+         Date departure = dDate.getTime();
+          departureDate = departure.getTime();
+         return dDate.getTime();
     }
     
-    private void setDepartureDate(String departure)
-    {
-        this.departureDate=departure;
-    }
-    
-    private String calculateNumberofNight()
-    {
-        return arrivalDate-departureDate;
-    }
-    private double calculateTotalPrice()
+    private void   calculateNumberofNight()
     {
         
+      long NumberofNight =departureDate-arrivalDate;
+      long elapsedDays = NumberofNight/(24*60*60*1000);
+      
     }
     
-    private String  toString()
+    public long getNumberofNight()
     {
-        
+        this.calculateNumberofNight();
+        return elapsedDays;
+    }
+    private void   calculateTotalPrice()
+    {
+        long TotalPrice = (long) (elapsedDays *nightlyRate);
+    }
+    
+    public long getTotalPrice()
+    {
+        this.calculateTotalPrice();;
+        return TotalPrice;
+    }
+    
+    public String  toString()
+    {
+       return  getTotalPrice();
     }
 }

@@ -6,6 +6,7 @@
 
 package calculate.reservation.totals;
 
+import java.text.DateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
 /**
@@ -14,39 +15,31 @@ import java.util.GregorianCalendar;
  */
 public class Reservation {
     
-    private long arrivalDate;
-    private long departureDate;
-    private long elapsedDays;
-    private long TotalPrice;
-    public static final double nightlyRate = 115.00;
+    private  Date arrivalDate;
+    private  Date departureDate;
+    private  long elapsedDays;
+    private  long TotalPrice;
+    public static final long nightlyRate = (long) 115.00;
     
     
-    public Reservation()
+     public void Reservation(Date aDate, Date dDate)
     {
+        this.arrivalDate=aDate;
+        this.departureDate=dDate;
+        
         
     }
-    public  Date setArrivalDate(int yy,int mm, int dd)
-    {
-      GregorianCalendar aDate = new GregorianCalendar (yy,mm,dd) ;
-       Date arrival = aDate.getTime();
-        arrivalDate =arrival.getTime();
-      return aDate.getTime();
+
+    Reservation() {
     }
-       
-     public  Date setDeparture(int yy,int mm, int dd)
+ 
+    public  long  calculateNumberofNight()
     {
-         GregorianCalendar dDate = new GregorianCalendar (yy,mm,dd) ;
-         Date departure = dDate.getTime();
-          departureDate = departure.getTime();
-         return dDate.getTime();
-    }
-    
-    private void   calculateNumberofNight()
-    {
-        
-      long NumberofNight =departureDate-arrivalDate;
-      long elapsedDays = NumberofNight/(24*60*60*1000);
-      
+      long  arrivalDateTime =  arrivalDate.getTime();
+      long departureDateTime = departureDate.getTime();
+      long elapse = departureDateTime-arrivalDateTime;
+      elapsedDays = elapse/(24*60*60*1000);
+      return elapsedDays;
     }
     
     public long getNumberofNight()
@@ -54,19 +47,46 @@ public class Reservation {
         this.calculateNumberofNight();
         return elapsedDays;
     }
-    private void   calculateTotalPrice()
-    {
-        long TotalPrice = (long) (elapsedDays *nightlyRate);
-    }
-    
-    public long getTotalPrice()
-    {
-        this.calculateTotalPrice();;
+    public long   calculateTotalPrice()
+    { 
+        long  arrivalDateTime =  arrivalDate.getTime();
+      long departureDateTime = departureDate.getTime();
+      long elapse = departureDateTime-arrivalDateTime;
+      elapsedDays = elapse/(24*60*60*1000);
+         TotalPrice =  elapsedDays *nightlyRate;
         return TotalPrice;
     }
     
-    public String  toString()
-    {
-       return  getTotalPrice();
+    public  long getTotalPrice()
+   {
+       this.calculateTotalPrice();
+        return TotalPrice;
     }
+    
+    // format Arrival Date
+    public String getFormattedArrivalDate()
+    {
+  
+            DateFormat adateFormat = DateFormat.getDateInstance(DateFormat.FULL);
+            String formattedArrivalDate =adateFormat.format(arrivalDate);
+            return formattedArrivalDate;
+    }
+    // format departure date
+    public String getFormattedDepartureDate()
+    {
+  
+            DateFormat adateFormat = DateFormat.getDateInstance(DateFormat.FULL);
+            String formattedArrivalDate =adateFormat.format(departureDate);
+            return formattedArrivalDate;
+    }
+
+  /* @Override
+    public String toString()
+    {
+       return formattedArrivalDate;
+    }*/
+
 }
+   
+
+    

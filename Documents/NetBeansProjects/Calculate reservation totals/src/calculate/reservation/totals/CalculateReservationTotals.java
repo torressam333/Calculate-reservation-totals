@@ -23,8 +23,8 @@ public class CalculateReservationTotals extends Reservation {
         // TODO code application logic here
         
         
-        System.out.println("Welcome to the Reservation Calculator.");
-        Scanner sc = new Scanner(System.in);
+       System.out.println("Welcome to the Reservation Calculator."+"\n");
+       Scanner sc = new Scanner(System.in);
        Reservation reserve = new Reservation();
        
         
@@ -81,7 +81,7 @@ public class CalculateReservationTotals extends Reservation {
             
             
             
-            System.out.print("Another reservation? (y/n): ");
+            System.out.print("\n"+"Another reservation? (y/n): ");
             choice=sc.next();
             
            

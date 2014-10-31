@@ -5,6 +5,8 @@
  */
 package list.movies.by.category;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author agichamo
@@ -14,9 +16,32 @@ public class Movie {
     public String title;
     public String category;
     
-    public Movie()
+     Movie(String mTitle, String mCategory)
     {
+        this.category=mCategory;
+        this.title=mTitle;
         
+    }
+
+    Movie() {
+    }
+    
+    public  void SortByCAtegory(String c)
+    {
+        if (category==c)
+        {
+            int i =0;
+             ArrayList<String> movies = new ArrayList<>();
+             movies.add(i, category);
+             movies.add(i, title);
+             System.out.println(movies);
+             i++;
+        }
+        else
+        {
+            
+        }
+       
     }
     private void setTitle(String t)
     {

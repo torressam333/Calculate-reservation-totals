@@ -11,10 +11,11 @@ import java.util.ArrayList;
  *
  * @author agichamo
  */
-public class Movie {
+public class Movie extends MovieIO   {
     
-    public String title;
-    public String category;
+    
+    public static String title;
+    public static String category;
     
      Movie(String mTitle, String mCategory)
     {
@@ -26,36 +27,37 @@ public class Movie {
     Movie() {
     }
     
-    public  void SortByCAtegory(String c)
-    {
-        if (category==c)
-        {
-            int i =0;
-             ArrayList<String> movies = new ArrayList<>();
-             movies.add(i, category);
-             movies.add(i, title);
-             System.out.println(movies);
-             i++;
-        }
-        else
-        {
-            
-        }
-       
+    
+    
+    
+    
+    public  String  storeInArray()
+    {       
+         return title+" "+category;  
     }
-    private void setTitle(String t)
+    
+    public String getcategory()
     {
-        this.title=t;
+         return category;
     }
-    private String getTitle()
+    
+ 
+    public String getTitle()
     {
         return title;
     }
     
-    private void setCatagory(String c)
+    //public String storeArrayList()
+   // {
+          
+   // }
+
+
+    /*@Override
+    public int compareTo(Object t)
     {
-        this.category=c;
-    }
+      
+    }*/
     
     
     

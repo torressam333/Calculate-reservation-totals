@@ -27,15 +27,7 @@ public class Movie extends MovieIO   {
     Movie() {
     }
     
-    
-    
-    
-    
-    public  String  storeInArray()
-    {       
-         return title+" "+category;  
-    }
-    
+       
     public String getcategory()
     {
          return category;
@@ -46,18 +38,7 @@ public class Movie extends MovieIO   {
     {
         return title;
     }
-    
-    //public String storeArrayList()
-   // {
-          
-   // }
 
-
-    /*@Override
-    public int compareTo(Object t)
-    {
-      
-    }*/
     
     
     

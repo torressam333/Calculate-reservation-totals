@@ -19,7 +19,13 @@ public class ListMoviesByCategory extends Movie{
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       Scanner sc = new Scanner(System.in); 
+        
+        
+        
+       Scanner sc = new Scanner(System.in);  // Scanner object instantiation
+       
+       
+       
        System.out.println("Welcome to the Movie List Application."+"\n");
        
        System.out.println("There are 100 movies in the list."+"\n");
@@ -27,172 +33,226 @@ public class ListMoviesByCategory extends Movie{
        String choice ="y";
        Movie m = new Movie();
        MovieIO mIO = new MovieIO();
-       while (choice.equalsIgnoreCase("y"))
+       
+       
+       while (choice.equalsIgnoreCase("y")) // check if the user enter Y or y
        {
-           //** Store the Movie list in the Array List **//
-               ArrayList<String> movies = new ArrayList<>();
+           // Array list object Instantiation 
+           ArrayList<String> movies = new ArrayList<>();
       
-          
-          String mainMenu = ("Select a choice from the menu: \n" 
-            + "1. Animated\n" 
-            + "2. Drama\n"
-            + "3. Horror\n" 
-            + "4. scifi\n"
+          // *****Standardized Manu *******//
+           
+          String mainMenu = ("***Select a choice from the menu:*** \n\n" 
+            + "Enter 1 for Animated\n" 
+            + "Enter 2 for Drama\n"
+            + "Enter 3 for Horror\n" 
+            + "Enter 4 for scifi\n"
+            + "Enter 5 for Comedy\n"
+            + "Enter 6 for musical\n"
+                  
            );
 
             System.out.println(mainMenu);
-
             int menuChoice = sc.nextInt();
 
             while (menuChoice < 1 || menuChoice > 6) {
                 System.out.print("\nError! Incorrect choice.\n");
                 System.out.println(mainMenu);
                 menuChoice = sc.nextInt();
+                System.out.println("");
+                
             }
             
             
-            
-                int index=0;     
+           //** Store the Movie list in the Array List **//   
+          int index=0;    
           for(int i=1;i<=100;i++)
            {
             
             Movie x=mIO.getMovie(i);
-            //System.out.print(x.getcategory());
             movies.add(index, m.getTitle()+"  "+m.getcategory());
-            //System.out.println(movies.get(index));
             index=index+1;
-           // System.out.println(index);
+           
            }
       
-            
+            // List movie by Title (animated)
             if(menuChoice==1)
             {
-                int indexm=0;
-                 int x=1;
+                
+                int x=1;
                 String userChoice1 = "animated";
-                     String test=""; 
-                    boolean y= !userChoice1.equals(mIO.getMovie(x).getcategory());
-                    for (String s : movies)
+                String movieCategory=""; 
+                for (String s : movies)
                     {
-                       test= getMovie(x).getcategory();
-                    if (test==userChoice1)
+                       movieCategory= getMovie(x).getcategory();
+                    if (movieCategory==userChoice1)
                     {
                         
-                     System.out.println(movies.get(indexm));
+                     // get movie by title
+                     System.out.println(getMovie(x).getTitle());
                      x++;
-                     indexm++;
-                          //System.out.println(movies.get(x));  
+                     
+                        
                     }
                     else{
                         x++;
-                        indexm++;
+                        
                         
                     }
                     }
+                  System.out.println("");
+
            
                 
             }
+            // List movie by Title (drama)
             else if(menuChoice==2)
             {
-                     int indexm=0;
-                 int x=1;
+                int x=1;
                 String userChoice1 = "drama";
-                     String test=""; 
-                    boolean y= !userChoice1.equals(mIO.getMovie(x).getcategory());
-                    for (String s : movies)
+                String movieCategory=""; 
+               for (String s : movies)
                     {
-                       test= getMovie(x).getcategory();
-                    if (test==userChoice1)
+                       movieCategory= getMovie(x).getcategory();
+                    if (movieCategory==userChoice1)
                     {
-                        
-                     System.out.println(movies.get(indexm));
+                     // get movie by title   
+                     System.out.println(getMovie(x).getTitle());
+
                      x++;
-                     indexm++;
-                          //System.out.println(movies.get(x));  
+                     
                     }
                     else{
                         x++;
-                        indexm++;
+                        
                         
                     }
                     }
+               
+               
+                 System.out.println("");
+
                 
             }
             
+            // List movie by Title (horror)
+
             else if(menuChoice==3)
             {
-                 int indexm=0;
-                 int x=1;
+                 
+                int x=1;
                 String userChoice1 = "horror";
-                     String test=""; 
-                    boolean y= !userChoice1.equals(mIO.getMovie(x).getcategory());
-                    for (String s : movies)
+                String movieCategory=""; 
+                for (String s : movies)
                     {
-                       test= getMovie(x).getcategory();
-                    if (test==userChoice1)
+                       movieCategory= getMovie(x).getcategory();
+                    if (movieCategory==userChoice1)
                     {
                         
-                     System.out.println(movies.get(indexm));
+                     System.out.println(getMovie(x).getTitle());
+
                      x++;
-                     indexm++;
-                          //System.out.println(movies.get(x));  
+                     
                     }
                     else{
-                        x++;
-                        indexm++;
-                        
+                        x++;                       
                     }
                     }
+                System.out.println("");
+
                 
             }
             
-                 else if(menuChoice==4)
+            // List movie by Title (horror)
+
+            else if(menuChoice==4)
             {
-                     int indexm=0;
+                     
                  int x=1;
                 String userChoice1 = "scifi";
-                     String test=""; 
-                    boolean y= !userChoice1.equals(mIO.getMovie(x).getcategory());
-                    for (String s : movies)
+                String movieCategory=""; 
+                for (String s : movies)
                     {
-                       test= getMovie(x).getcategory();
-                    if (test==userChoice1)
+                     movieCategory= getMovie(x).getcategory();
+                    if (movieCategory==userChoice1)
                     {
                         
-                     System.out.println(movies.get(indexm));
-                     x++;
-                     indexm++;
-                          //System.out.println(movies.get(x));  
+                     System.out.println(getMovie(x).getTitle());
+
+                     x++;                
                     }
                     else{
                         x++;
-                        indexm++;
+                        
                         
                     }
                     }
+                System.out.println("");
+
                 
             }
             
+            else if(menuChoice==5)
+            {
+                     
+                int x=1;
+                String userChoice1 = "comedy";
+                String movieCategory=""; 
+                for (String s : movies)
+                    {
+                     movieCategory= getMovie(x).getcategory();
+                    if (movieCategory==userChoice1)
+                    {
+                        
+                     System.out.println(getMovie(x).getTitle());
+              
 
+                     x++;                
+                    }
+                    else{
+                        x++;
+                        
+                        
+                    }
+                    }
+                       System.out.println("");
+                
+            }
+       
             
-          /*for(int z=1;z<=100;z++)
-           {
-          if( MovieC.equals(getMovie(z).getcategory()));
-          {
-              System.out.print(m.SortByCAtegory());
-          }
-          
-          
-          
-          
-           }*/
-         
-           
-           
-          
+            else if(menuChoice==6)
+            {
+                     
+                int x=1;
+                String userChoice1 = "musical";
+                String movieCategory=""; 
+                for (String s : movies)
+                    {
+                     movieCategory= getMovie(x).getcategory();
+                    if (movieCategory==userChoice1)
+                    {
+                        
+                     System.out.println(getMovie(x).getTitle());
+              
+
+                     x++;                
+                    }
+                    else{
+                        x++;
+                        
+                        
+                    }
+                    }
+                       System.out.println("");
+                
+            }
+         // check to  see if the user would like to continue
+            
+                     System.out.print("Continue? (y/n): ");
+         choice = sc.next();
+         System.out.println("");
        }
-             System.out.print("Continue? (y/n): ");
-           choice = sc.next();
+            
     }
     
 }
